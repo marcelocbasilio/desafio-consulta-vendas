@@ -1,7 +1,6 @@
 package com.devsuperior.dsmeta.dto;
 
 import java.time.LocalDate;
-
 import com.devsuperior.dsmeta.entities.Sale;
 
 public class SaleMinDTO {
@@ -22,15 +21,16 @@ public class SaleMinDTO {
 		date = entity.getDate();
 	}
 
-	public Long getId() {
-		return id;
+	public SaleMinDTO(Sale entity, String name) {
+		id = entity.getId();
+		amount = entity.getAmount();
+		date = entity.getDate();
+		name = entity.getSeller().getName();
 	}
 
-	public Double getAmount() {
-		return amount;
-	}
+	public Long getId() { return id; }
 
-	public LocalDate getDate() {
-		return date;
-	}
+	public Double getAmount() { return amount; }
+
+	public LocalDate getDate() { return date; }
 }
